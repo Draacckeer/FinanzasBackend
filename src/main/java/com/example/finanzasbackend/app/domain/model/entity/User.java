@@ -10,13 +10,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @With
 @Entity
-@Table(name = "user")
+@Table(name = "user", schema = "finanzas")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombres;
+    private String names;
     private String username;
     private String password;
 }
