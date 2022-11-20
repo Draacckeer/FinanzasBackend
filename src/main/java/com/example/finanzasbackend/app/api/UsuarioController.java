@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*" , maxAge = 3600)
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1/usuarios")
 public class UsuarioController {
     private final UserService userService;
     private final UserMapper mapper;
