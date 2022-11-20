@@ -4,6 +4,7 @@ import com.example.finanzasbackend.app.domain.model.entity.User;
 import com.example.finanzasbackend.app.domain.service.UserService;
 import com.example.finanzasbackend.app.mapping.UserMapper;
 import com.example.finanzasbackend.app.resources.user.CreateUserResource;
+import com.example.finanzasbackend.app.resources.user.UserResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,18 +24,18 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAll(){
-        return userService.getAll();
+    public List<UserResource> getAll(){
+        return mapper.toResource(userService.getAll());
     }
 
     @GetMapping("/authenticate/{username}/{password}")
-    public User authenticate(@PathVariable String username, @PathVariable String password){
-        return userService.authenticate(username, password);
+    public UserResource authenticate(@PathVariable String username, @PathVariable String password){
+        return mapper.toResource(userService.authenticate(username, password));
     }
 
     @PostMapping("/create")
-    public User create(@RequestBody CreateUserResource user){
-        return userService.create(mapper.toModel(user));
+    public UserResource create(@RequestBody CreateUserResource user){
+        return mapper.toResource(userService.create(mapper.toModel(user)));
     }
 
     @DeleteMapping("/delete/{id}")
