@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User authenticate(String username, String password) {
-        return null;
+        return userRepository.findByUsernameAndPassword(username, password);
     }
 
     @Override
