@@ -22,6 +22,10 @@ public class UserController {
     }
 
     @GetMapping
+    public ResponseEntity<?> test(){
+        return ResponseEntity.ok("test");
+    }
+    @GetMapping
     public List<UserResource> getAll(){
         return mapper.toResource(userService.getAll());
     }
