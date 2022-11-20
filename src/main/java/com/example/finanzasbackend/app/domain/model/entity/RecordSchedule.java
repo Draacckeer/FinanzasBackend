@@ -14,7 +14,7 @@ import java.util.Date;
 @With
 @Entity
 @Table(name = "record_schedule")
-public class RecordSchedule extends AuditModel {
+public class RecordSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
