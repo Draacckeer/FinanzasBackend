@@ -1,6 +1,5 @@
 package com.example.finanzasbackend.app.api;
 
-import com.example.finanzasbackend.app.domain.model.entity.User;
 import com.example.finanzasbackend.app.domain.service.UserService;
 import com.example.finanzasbackend.app.mapping.UserMapper;
 import com.example.finanzasbackend.app.resources.user.CreateUserResource;
@@ -14,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/users")
 public class UserController {
-
     private final UserService userService;
     private final UserMapper mapper;
 
