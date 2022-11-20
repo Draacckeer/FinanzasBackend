@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UpdateUserResource {
-    private String names;
+    private String nombres;
     private String username;
     private String password;
 }
